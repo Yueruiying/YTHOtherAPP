@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>招商报名公司列表</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    /* 样式表 */
+    .list-title{
+      text-align: center;
+    }
+    .table{
+      border-collapse:collapse;
+      width: 500px;
+      margin: 0 auto;
+    }
+    .table td{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="list-title">招商意向客户列表</h1>
+  <table class="table" border="1">
+      <tr>
+        <th>姓名</th>
+        <th>手机</th>
+        <th>公司</th>
+        <th>城市</th>
+      </tr>
+      <% feedbacks.forEach(function(item){ %>
+        <tr >
+          <td ><%= item.get('userName') %></td>
+          <td ><%= item.get('phoneNum') %></td>
+          <td ><%= item.get('company') %></td>
+          <td ><%= item.get('city') %></td>
+        </tr>  
+      <% }) %>
+  </table>
+</body>
+</html>
