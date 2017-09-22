@@ -13,10 +13,10 @@ AV.Cloud.define('hello', function(request) {
 });
 
 AV.Cloud.afterSave('BusinessFeedback', function(request) {
-	var username request.object.get('userName')
-	var phoneNum request.object.get('phoneNum')
-	var company request.object.get('company')
-	var city request.object.get('city')
+	var username = request.object.get('userName')
+	var phoneNum = request.object.get('phoneNum')
+	var company = request.object.get('company')
+	var city = request.object.get('city')
 	console.log(username,phoneNum,company,city)
 });
 
