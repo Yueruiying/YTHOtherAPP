@@ -12,6 +12,14 @@ AV.Cloud.define('hello', function(request) {
   	return 'Hello world!';
 });
 
+AV.Cloud.afterSave('BusinessFeedback', function(request) {
+	var username request.object.get('userName')
+	var phoneNum request.object.get('phoneNum')
+	var company request.object.get('company')
+	var city request.object.get('city')
+	console.log(username,phoneNum,company,city)
+});
+
 
 const crypto = require('crypto')
 const rp = require('request-promise')

@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   var query = new AV.Query(BusinessFeedback);
   query.descending('createdAt');
   query.find().then(function(results) {
-    console.log(results)
     res.render('feedback', {
       title: '意向代理商列表',
       feedbacks: results
