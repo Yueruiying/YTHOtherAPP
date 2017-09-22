@@ -17,7 +17,7 @@ AV.Cloud.afterSave('BusinessFeedback', function(request) {
 	var phoneNum = request.object.get('phoneNum')
 	var company = request.object.get('company')
 	var city = request.object.get('city')
-	sendBusnissFeedback('15158898469', {phoneNum: 'phoneNum', userName: 'username', company: 'company', city: 'city'}).then(function (ok) {
+	sendBusnissFeedback('15158898469', {phoneNum: phoneNum, userName: username, company: company, city: city}).then(function (ok) {
 	  console.log(ok)
 	}, function (err) {
 	  console.error(err)
