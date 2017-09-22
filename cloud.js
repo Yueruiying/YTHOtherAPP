@@ -19,7 +19,7 @@ const accountSid = "8a216da857511049015774861894153f"
 const authToken = "e1de26cde6e24dd28dfedcd81467d1f0"
 const appId = "8a216da85da6adf7015de9addca8199f"
 
-const sms206141 = "206141"
+const sms206141 = "206988"
 
 var url = "https://app.cloopen.com:8883/2013-12-26/Accounts/{accountSid}/SMS/TemplateSMS?sig={SigParameter}"
 
@@ -79,6 +79,7 @@ var sms206141PayloadTpl = `
     <data>{userName}</data>
     <data>{company}</data>
     <data>{city}</data>
+    <data>{url}</data>
   </datas>
 </TemplateSMS>
 `
@@ -101,6 +102,7 @@ function sendBusnissFeedback (toPhone, data) {
           .replace('{userName}', data.userName || '未知')
           .replace('{company}', data.company || '未知')
           .replace('{city}', data.city || '未知')
+          .replace('{url}', 'http://yingtaohuoappot.leanapp.cn/feedbacks')
   })
 }
 
