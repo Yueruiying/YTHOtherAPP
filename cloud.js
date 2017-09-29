@@ -4,7 +4,7 @@ var AV = require('leanengine');
  * 一个简单的云代码方法
  */
 AV.Cloud.define('hello', function(request) {
-	sendBusnissFeedback('13777867678', {phoneNum: '15158898469', userName: '悦瑞英', company: '典丰科技', city: '杭州'}).then(function (ok) {
+	sendBusnissFeedback('15158898469', {phoneNum: '15158898469', userName: '悦瑞英', company: '典丰科技', city: '杭州'}).then(function (ok) {
 	  console.log(ok)
 	}, function (err) {
 	  console.error(err)
@@ -17,7 +17,7 @@ AV.Cloud.afterSave('BusinessFeedback', function(request) {
 	var phoneNum = request.object.get('phoneNum')
 	var company = request.object.get('company')
 	var city = request.object.get('city')
-	sendBusnissFeedback('15158898469', {phoneNum: phoneNum, userName: username, company: company, city: city}).then(function (ok) {
+	sendBusnissFeedback('13777867678', {phoneNum: phoneNum, userName: username, company: company, city: city}).then(function (ok) {
 	  console.log(ok)
 	}, function (err) {
 	  console.error(err)
